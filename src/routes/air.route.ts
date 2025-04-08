@@ -40,17 +40,22 @@ export default class AirQualityRoute implements Routes {
      *             schema:
      *               $ref: '#/components/schemas/NearestCity'
      *             example:
-     *              statusCode: 200
-     *              message: "data are listed successfully."
-     *              data:
-     *                 Result:
-     *                    pollution:
-     *                        ts: "2025-04-08T15:00:00.000Z"
-     *                        aqius: 47
-     *                        mainus: "p2"
-     *                        aqicn: 28
-     *                        maincn: "o3"
-     *              timestamp: "2025-4-8 7:29:37"
+     *              SuccessExample:
+     *                  statusCode: 200
+     *                  message: "data are listed successfully."
+     *                  data:
+     *                     Result:
+     *                        pollution:
+     *                            ts: "2025-04-08T15:00:00.000Z"
+     *                            aqius: 47
+     *                            mainus: "p2"
+     *                            aqicn: 28
+     *                            maincn: "o3"
+     *                  timestamp: "2025-4-8 7:29:37"
+     *              FailExample:
+     *                  statusCode: 403
+     *                  message: "⚠️ Service Error - api.airvisual.com: Forbidden"
+     *                  timestamp: "2025-4-8 7:29:37"
      */
     this.router.get(
       `${this.path}nearest-city`,
@@ -71,12 +76,17 @@ export default class AirQualityRoute implements Routes {
      *             schema:
      *               $ref: '#/components/schemas/ParisMostPolluted'
      *             example:
-     *              statusCode: 200
-     *              message: "The most polluted date and time in paris zone."
-     *              data:
-     *                 date: "2025-04-08"
-     *                 time: "12:00:00"
-     *              timestamp: "2025-4-8 7:29:37"
+     *                SuccessExample:
+     *                    statusCode: 200
+     *                    message: "The most polluted date and time in paris zone."
+     *                    data:
+     *                       date: "2025-04-08"
+     *                       time: "12:00:00"
+     *                    timestamp: "2025-4-8 7:29:37"
+     *                FailExample:
+     *                  statusCode: 400
+     *                  message: "No Data collected for Paris yet"
+     *                  timestamp: "2025-4-8 7:29:37"
      */
     this.router.get(
       `${this.path}paris-most-polluted`,

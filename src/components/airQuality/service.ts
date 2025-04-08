@@ -40,7 +40,7 @@ export default class AirQualityService {
         raw: true,
       });
 
-      if(!result)
+      if(result)
         throw badRequest("No Data collected for Paris yet");
 
     return result;
