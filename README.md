@@ -2,7 +2,7 @@
 
 This project provides APIs to retrieve air quality data, including:
 - The nearest city based on coordinates
-- The most polluted date and time in paris zone.
+- The most polluted date and time in Paris zone.
 ---
 
 ## 🚀 Features
@@ -32,6 +32,8 @@ This project provides APIs to retrieve air quality data, including:
 - Update DB_USER with your DB User.
 - Update DB_PASSWORD with your DB Password.
 - Update API_KEY with your Air quality API Key.
+- Update REDISURL and REDISPASSWORD with your Redis URL and Password to connect.
+  
 ---
 
 ## 📦 Installation
