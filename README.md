@@ -19,7 +19,8 @@ This project provides APIs to retrieve air quality data, including:
 
 - TypeScript
 - Node.js
-- Sequelize (PostgreSQL or MySQL)
+- Redis
+- Sequelize (PostgreSQL)
 - Jest (for unit testing)
 - dotenv (for environment config)
   
