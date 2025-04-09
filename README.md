@@ -11,7 +11,7 @@ This project provides APIs to retrieve air quality data, including:
 - 🗃️ Retrieve the highest recorded pollution levels in Paris from your DB
 - 🔒 Environment variable support using `.env`
 - ✅ Unit tested with Jest
-- ✅ Swagger Documentation
+- ✅ Swagger Documentation http://localhost:3000/api-docs
 
 ---
 
@@ -31,3 +31,10 @@ This project provides APIs to retrieve air quality data, including:
 git clone https://github.com/yourusername/airQuality.git
 cd airQuality
 npm install
+npm run start:dev
+```
+---
+## 📦 Testing
+```bash
+npm run start:test
+```
