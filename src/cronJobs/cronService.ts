@@ -5,22 +5,26 @@ const airQualityService = new AirQualityService();
 import redisCache from "../common/redis.cache";
 export default class CronService {
   async airQualityForParis() {
-    const rediKey = "paris";
-    const foundOnRedis = await redisCache.getToRedis(rediKey);
+    try {
+      const rediKey = "paris";
+      const foundOnRedis = await redisCache.getToRedis(rediKey);
 
-    if (!foundOnRedis) {
-      const location = { lat: 48.856613, lon: 2.352222 };
+      if (!foundOnRedis) {
+        const location = { lat: 48.856613, lon: 2.352222 };
 
-      const {
-        Result: { pollution },
-      }: PollutionCron = await airQualityService.nearestCityLocationService(
-        location
-      );
-      DB.ParisAirQuality.create({
-        ...pollution,
-      });
+        const {
+          Result: { pollution },
+        }: PollutionCron = await airQualityService.nearestCityLocationService(
+          location
+        );
+        await DB.ParisAirQuality.create({
+          ...pollution,
+        });
 
-      await redisCache.setToRedis(rediKey, pollution);
+        await redisCache.setToRedis(rediKey, pollution);
+      }
+    } catch (error) {
+      console.log(`CronJob Error: ${error}`);
     }
   }
 }
