@@ -40,7 +40,7 @@ This project provides APIs to retrieve air quality data, including:
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/yourusername/airQuality.git
+git clone https://github.com/nourElsmeny/airQuality.git
 cd airQuality
 npm install
 npm run start:dev
